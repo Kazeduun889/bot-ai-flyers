@@ -9,24 +9,52 @@
 </head>
 <body>
   <div class="container">
-    <h1>AI Mini App</h1>
-    <div class="mode">
-      <label>Режим</label>
-      <select id="mode">
-        <option value="creative">Creative</option>
-        <option value="strict">Strict</option>
-      </select>
-    </div>
-    <div class="block">
-      <label>Сообщение</label>
-      <textarea id="text" placeholder="Напишите запрос"></textarea>
-      <button id="sendChat">Отправить в чат</button>
-    </div>
-    <div class="block">
-      <label>Описание изображения</label>
-      <input id="prompt" placeholder="Напишите описание">
-      <button id="sendImage">Сгенерировать изображение</button>
-    </div>
+    <header class="brand">
+      <div class="logo">🤖</div>
+      <div class="title">AI Mini App</div>
+      <div class="subtitle">Стильный помощник для текста и изображений</div>
+    </header>
+
+    <section class="card">
+      <div class="row">
+        <div class="col">
+          <label>Режим ответов</label>
+          <select id="mode">
+            <option value="creative">Creative</option>
+            <option value="strict">Strict</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label>Сообщение</label>
+          <textarea id="text" placeholder="Напишите запрос..."></textarea>
+        </div>
+      </div>
+      <div class="actions">
+        <button id="sendChat">Отправить</button>
+        <span class="hint">Ответ придет в чат Telegram</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="row">
+        <div class="col">
+          <label>Описание изображения</label>
+          <input id="prompt" placeholder="Например: неоновый город ночью, киберпанк">
+        </div>
+      </div>
+      <div class="actions">
+        <button id="sendImage">Сгенерировать изображение</button>
+        <span class="hint">Превью ниже, изображение также отправится в чат</span>
+      </div>
+      <div class="preview">
+        <div id="imgStatus" class="status">Нет изображения</div>
+        <img id="imgPreview" alt="preview" style="display:none"/>
+      </div>
+    </section>
+
+    <footer class="footer">© AI Mini App — v0.3</footer>
   </div>
   <script src="app.js"></script>
 </body>
